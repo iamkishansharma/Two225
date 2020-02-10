@@ -5,17 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+
     JobScheduler jobScheduler;
+    TextView t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
     }
 
     public void startJob(View view){
@@ -36,5 +45,9 @@ public class MainActivity extends AppCompatActivity {
             jobScheduler = null;
             Toast.makeText(MainActivity.this, ".....Job Called.....", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void suruHoja(View view) {
+        startActivity(new Intent(this,DateTimeActivity.class));
     }
 }
